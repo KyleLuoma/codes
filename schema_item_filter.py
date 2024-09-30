@@ -173,6 +173,9 @@ def merge_pred_results(sample, pred_results):
     return merged_results
 
 def filter_schema(dataset, dataset_type, sic, num_top_k_tables = 5, num_top_k_columns = 5):
+    """
+    dataset is a list of dicts, where the dict format can be seen in ./data/schema_item_example.json
+    """
     for data in tqdm(dataset, desc = "filtering schema items for the dataset"):
         filtered_schema = dict()
         filtered_matched_contents = dict()
